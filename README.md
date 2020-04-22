@@ -149,7 +149,7 @@ vueapp/src/views/PageOne.vue
 vuex store 的用法
 vuex 是一个全局状态管理组件，主要是用于不同组件的状态同步。下面以transitionName
 变量来举例，全局状态是存在 vueapp/src/store/index.js文件，结构是这样的
-```
+```javascript
 import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
