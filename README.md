@@ -2,7 +2,7 @@
 this is a vue demo project for html5
 
 
-项目创建
+## 项目创建
 首先安装要安装nodejs 环境，version>8.0
 
 然后vuecli的全局脚手架工具，执行命令：
@@ -40,11 +40,11 @@ E2E Testing 支持 E2E 测试。
 
 
 
-知识点
-组件的封装
+## 知识点
+### 组件的封装
 在vue单页应用里面，.vue文件就代表一个组件或者一个页面view, 页面和组件的区别在于组件一般是可以被多个页面复用的，放在vueapp/src/components目录下，页面的话放在vueapp/src/views目录里， 下面用VHeader.vue组件来说明
 vueapp/src/components/VHeader.vue
-组件的传值
+### 组件的传值
 还是以VHeader.vue组件为例，接收4个参数
 图片: https://uploader.shimo.im/f/lh7PPzBkie02h0ul.png
 title header组件的标题，默认值是“标题一”
@@ -86,7 +86,7 @@ headerRightHanl() {
 ```
 详细请参考vueapp/src/views/PullRefresh.vue页面的用法
 
-子组件调用父组件的方法
+### 子组件调用父组件的方法
 这个实例在vueapp/src/views/PageTwo.vue页面
 首先在引入一个子组件到这个页面，子组件放在 
 vueapp/src/components/ChildrenComp.vue
@@ -105,7 +105,7 @@ callPrantCompActive这个是子组件的一个参数，接收的是一个函数�
 详细的调用过程可以结合下面这两个文件来查看
 vueapp/src/components/ChildrenComp.vue
 vueapp/src/views/PageTwo.vue
-父组件调用子组件的方法
+### 父组件调用子组件的方法
 这个例子可以结果header组件，首先header组件可以嵌入到 vueapp/src/views/Index.vue页面。然后如果要在Index.vue页面里面修改VHeader.vue组件的title值，那就需要调用VHeader.vue组件的方法，那就需要在VHeader.vue组件实现一个方法
 ```
 setTitle(title) {
@@ -123,7 +123,7 @@ setTitle(title) {
 ```
 通过 this.$refs.vheader.setTitle("")就可以调用到header的方法了
 
-兄弟组件的相互方法调用
+### 兄弟组件的相互方法调用
 首先在vueapp/src/components/下面有两个组件
 vueapp/src/components/BrotherComp1.vue
 vueapp/src/components/BrotherComp2.vue
@@ -146,7 +146,7 @@ vueapp/src/components/BrotherComp1.vue
 vueapp/src/components/BrotherComp2.vue
 vueapp/src/views/PageOne.vue
 
-vuex store 的用法
+### vuex store 的用法
 vuex 是一个全局状态管理组件，主要是用于不同组件的状态同步。下面以transitionName
 变量来举例，全局状态是存在 vueapp/src/store/index.js文件，结构是这样的
 ```javascript
@@ -194,7 +194,7 @@ $store.commit('transitionName_M', '参数')
 如果是通过提交到action的话使用以下代码
 $store.dispatch('transitionName_A', '参数')
 
-字体图标的使用
+### 字体图标的使用
 首先一般是到https://www.iconfont.cn/上面的选择需要的一些图标
 然后下载下来放到你的项目里面， 一般是放到vueapp/src/asssets目录下
 
@@ -230,6 +230,6 @@ slot插槽的使用
 vueapp/src/components/VContent.vue
 vueapp/src/views/Index.vue
 
-router的守卫
+### router的守卫
 router守卫的意思是在切换页面，也可以说是window.location.hash发生变化的时候会执行一些事件，比如页面进入之前，页面进入之后。
 详情请参考https://router.vuejs.org/zh/guide/advanced/navigation-guards.html#%E5%85%A8%E5%B1%80%E5%89%8D%E7%BD%AE%E5%AE%88%E5%8D%AB
