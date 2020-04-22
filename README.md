@@ -7,16 +7,16 @@ this is a vue demo project for html5
 
 然后vuecli的全局脚手架工具，执行命令：
 
-```
+```javascript
 npm install -g @vue/cli 
 ```
 
 查看命令 :
-```
+```javascript
 vue -V
 ```
 创建项目：
-```
+```javascript
 vue create you_project_name
 ```
 
@@ -52,7 +52,7 @@ isShowBackBtn 是否显示后退按钮，默认为true显示
 isShowRightBtn 是否显示右边的按钮，默认为true显示
 onRightClick 右边按钮的点击事件函数，默认是一个空函数
 在页面中引用组件传值
-```
+```javascript
 <template>
   <div class="index-page">
     <v-header :isShowBackBtn="false"  :isShowRightBtn="false" title="首页1"></v-header>
@@ -72,11 +72,11 @@ components: {
 组件的事件或函数的传递
 还以VHeader.vue举例说明
 onRightClick 参数传递的就是一个函数，
-```
+```javascript
 <v-header :onRightClick="headerRightHanle" title="pull refresh"></v-header>
 ```
 headerRightHanle是一个在页面里定义好的函数
-```
+```javascript
 headerRightHanl() {
   Dialog.alert({
     title: '标题',
@@ -90,7 +90,7 @@ headerRightHanl() {
 这个实例在vueapp/src/views/PageTwo.vue页面
 首先在引入一个子组件到这个页面，子组件放在 
 vueapp/src/components/ChildrenComp.vue
-```
+```javascript
 import ChildrenComp from '@/components/ChildrenComp'
 components: {
   'children-comp': ChildrenComp,
@@ -98,7 +98,7 @@ components: {
 ```
 
 然后在template里面使用这个组件
-```
+```javascript
 <children-comp :callPrantCompActive="changeVal" ref="childComp" ></children-comp>
 ```
 callPrantCompActive这个是子组件的一个参数，接收的是一个函数，而这个函数是定义在页面里面的，所以这个函数内部可以访问到这个页面的数据。子组件可以通过一个出发来执行这个函数，这样就实现的子组件调用所在页面的方法。
@@ -107,13 +107,13 @@ vueapp/src/components/ChildrenComp.vue
 vueapp/src/views/PageTwo.vue
 ### 父组件调用子组件的方法
 这个例子可以结果header组件，首先header组件可以嵌入到 vueapp/src/views/Index.vue页面。然后如果要在Index.vue页面里面修改VHeader.vue组件的title值，那就需要调用VHeader.vue组件的方法，那就需要在VHeader.vue组件实现一个方法
-```
+```javascript
 setTitle(title) {
   this.dtitle = title
 },
 ```
 这个dtitle就是绑定在template上的一个变量，所以只需要修改这个变量的值界面就会跟着变。下面是Index.vue页面调用header的方式
-```
+```javascript
 <v-header 
   :isShowBackBtn="false" 
   :isShowRightBtn="false"
@@ -130,14 +130,14 @@ vueapp/src/components/BrotherComp2.vue
 BrotherComp1组件会调用BrotherComp2内部的方法，反之亦然。
 主要是用到vue.$root 里面的 $on 和 $emit 事件
 在BrotherComp1 组件created事件里面注册一个事件
-```
+```javascript
 this.$root.$on('callComp1', function(params) {
 
 })
 ```
 
 然后BrotherComp2组件里面可以通过
-```
+```javascript
 this.$root.$emit('callComp1', "params text")
 ```
 
@@ -183,7 +183,7 @@ export default new Vuex.Store({
 首先state的取值，在vueapp/src/App.js里面用到了transitionName状态，引入
 import { mapGetters } from 'vuex'
 然后直接在模板里面就可以使用了
-```
+```javascript
 <transition :name="transitionName">
       <router-view/>
 </transition>
@@ -201,12 +201,12 @@ $store.dispatch('transitionName_A', '参数')
 用font-class方式的的引入到你的页面或是组件
 
 第一步：引入项目下面生成的 fontclass 代码：
-```
+```javascript
 <link rel="stylesheet" href="./iconfont.css">
 ```
 
 第二步：挑选相应图标并获取类名，应用于页面：
-```
+```javascript
 <span class="iconfont icon-xxx"></span>
 ```
 
@@ -216,7 +216,7 @@ slot插槽的使用
 首先在vueapp/src/components/VContent.vue定义一个名字为content的slot
 <slot name="content"></slot>
 然后可以这样使用来定制VContent.vue内部的模板
-```
+```javascript
 <v-content>
   <template slot="content">
     <div @click="changeTile" class="change-title">改变title</div>
