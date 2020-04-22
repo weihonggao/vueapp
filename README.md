@@ -21,11 +21,11 @@ vue create you_project_name
 ```
 
 下面会让你选默认创建，还是手动创建
-图片: https://uploader.shimo.im/f/Za2act6RN5o7awdK.png
+![https://uploader.shimo.im/f/Za2act6RN5o7awdK.png]
 如果是default操作就一路回车下去
 Manually 是手动方式创建项目，
 可以根据自己的需求进行选择一些配置
-图片: https://uploader.shimo.im/f/HUeaBTK2OjedmGq3.png
+![https://uploader.shimo.im/f/HUeaBTK2OjedmGq3.png]
 TypeScript 支持使用 TypeScript 书写源码
 Progressive Web App (PWA) Support PWA 支持。
 Router 支持 vue-router 。
@@ -46,7 +46,7 @@ E2E Testing 支持 E2E 测试。
 vueapp/src/components/VHeader.vue
 ### 组件的传值
 还是以VHeader.vue组件为例，接收4个参数
-图片: https://uploader.shimo.im/f/lh7PPzBkie02h0ul.png
+![https://uploader.shimo.im/f/lh7PPzBkie02h0ul.png]
 title header组件的标题，默认值是“标题一”
 isShowBackBtn 是否显示后退按钮，默认为true显示
 isShowRightBtn 是否显示右边的按钮，默认为true显示
